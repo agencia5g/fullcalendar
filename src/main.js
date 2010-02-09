@@ -93,7 +93,7 @@ var rtlDefaults = {
 // function for adding/overriding defaults
 var setDefaults = fc.setDefaults = function(d) {
 	$.extend(true, defaults, d);
-}
+};
 
 
 
@@ -663,7 +663,7 @@ $.fn.fullCalendar = function(options) {
 							else if (views[buttonName]) {
 								buttonClick = function() {
 									button.removeClass(tm + '-state-hover');
-									changeView(buttonName)
+									changeView(buttonName);
 								};
 							}
 							if (buttonClick) {

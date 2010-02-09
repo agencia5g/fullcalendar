@@ -49,7 +49,7 @@ views.month = function(element, options) {
 			);
 		}
 	});
-}
+};
 
 views.basicWeek = function(element, options) {
 	return new Grid(element, options, {
@@ -105,7 +105,7 @@ views.basicDay = function(element, options) {
 			);
 		}
 	});
-}
+};
 
 
 // rendering bugs
@@ -125,8 +125,8 @@ function Grid(element, options, methods) {
 		cachedEvents=[],
 		segmentContainer,
 		dayContentPositions = new HorizontalPositionCache(function(dayOfWeek) {
-			return tbody.find('td:eq(' + ((dayOfWeek - Math.max(firstDay,nwe)+colCnt) % colCnt) + ') div div')
-		}),
+			return tbody.find('td:eq(' + ((dayOfWeek - Math.max(firstDay,nwe)+colCnt) % colCnt) + ') div div');
+		});
 		// ...
 		
 	// initialize superclass
@@ -306,7 +306,7 @@ function Grid(element, options, methods) {
 		updateSize(width, height);
 		fetchEvents(renderEvents);
 	
-	};
+	}
 	
 	
 	function dayClick(ev) {
@@ -509,7 +509,7 @@ function Grid(element, options, methods) {
 	
 	// event resizing w/ 'view' methods...
 
-};
+}
 
 
 function _renderDaySegs(segs, rowCnt, view, minLeft, maxLeft, getRow, dayContentLeft, dayContentRight, segmentContainer, bindSegHandlers, modifiedEventId) {
@@ -666,5 +666,3 @@ function _renderDaySegs(segs, rowCnt, view, minLeft, maxLeft, getRow, dayContent
 	}
 	
 }
-
-
