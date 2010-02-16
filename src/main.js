@@ -33,17 +33,20 @@ var defaults = {
 	titleFormat: {
 		month: 'MMMM yyyy',
 		week: "MMM d[ yyyy]{ '&#8212;'[ MMM] d yyyy}",
-		day: 'dddd, MMM d, yyyy'
+		day: 'dddd, MMM d, yyyy',
+		gantt: "d MMMM[ yyyy] { '&#8212;' d MMMM yyyy}"
 	},
 	columnFormat: {
 		month: 'ddd',
 		week: 'ddd M/d',
-		day: 'dddd M/d'
+		day: 'dddd M/d',
+		gantt: 'd MMM'
 	},
 	timeFormat: { // for event elements
 		'': 'h(:mm)t' // default
 	},
 	
+	ganttDays: 21,
 	// locale
 	isRTL: false,
 	firstDay: 0,
@@ -59,7 +62,8 @@ var defaults = {
 		today: 'today',
 		month: 'month',
 		week: 'week',
-		day: 'day'
+		day: 'day',
+		gantt: 'GANTT'
 	},
 	
 	// jquery-ui theming

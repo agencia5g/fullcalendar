@@ -1,5 +1,5 @@
 
-/* Grid-based Views: month, basicWeek, basicDay
+/* Grid-based Views: month, basicWeek, basicDay, gantt
 -----------------------------------------------------------------------------*/
 
 setDefaults({
@@ -107,6 +107,31 @@ views.basicDay = function(element, options) {
 	});
 };
 
+views.gantt = function(element, options) {
+	return new Grid(element, options, {
+		render: function(date, delta, width, height, fetchEvents) {
+			if (delta) {
+				addDays(date, delta * 7);
+			}
+			var visStart = this.visStart = cloneDate(this.start = cloneDate(date)),
+				visEnd = this.visEnd = cloneDate(this.end = addDays(cloneDate(visStart), this.option('ganttDays')));
+
+			this.title = formatDates(
+				visStart,
+				addDays(cloneDate(visEnd), -1),
+				this.option('titleFormat'),
+				options
+			);
+			this.renderGrid(
+				1, this.option('ganttDays'),
+				this.option('columnFormat'),
+				false,
+				width, height,
+				fetchEvents
+			);
+		}
+	});
+};
 
 // rendering bugs
 
