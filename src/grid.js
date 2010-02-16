@@ -103,7 +103,7 @@ views.basicDay = function(element, options) {
 
 views.gantt = function(element, options) {
 	return new Grid(element, options, {
-		render: function(date, delta, width, height, fetchEvents) {
+		render: function(date, delta) {
 			if (delta) {
 				addDays(date, delta * 7);
 			}
@@ -119,9 +119,7 @@ views.gantt = function(element, options) {
 			this.renderGrid(
 				1, this.option('ganttDays'),
 				this.option('columnFormat'),
-				false,
-				width, height,
-				fetchEvents
+				false
 			);
 		}
 	});
